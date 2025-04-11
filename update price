@@ -1,0 +1,8 @@
+UPDATE
+    oc_product p
+        JOIN
+        oc_manufacturer m ON p.manufacturer_id = m.manufacturer_id
+SET
+    p.price = p.price * 1.10
+WHERE
+    m.name = 'apple';
