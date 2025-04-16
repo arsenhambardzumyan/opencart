@@ -306,8 +306,9 @@ class Product extends \Opencart\System\Engine\Controller {
             $data['review'] = $this->load->controller('product/review');
 
             $this->load->model('catalog/review');
+            // count reviews
             $data['review_count'] = $this->model_catalog_review->getTotalReviewsByProductId($product_id);
-
+            // end count reviews
             $data['wishlist_add'] = $this->url->link('account/wishlist.add', 'language=' . $this->config->get('config_language'));
             $data['compare_add'] = $this->url->link('product/compare.add', 'language=' . $this->config->get('config_language'));
 
